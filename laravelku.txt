@@ -1,0 +1,21 @@
+DompPDF INSTALL
+composer require barryvdh/laravel-dompdf
+
+Providers
+Barryvdh\DomPDF\ServiceProvider::class,
+
+Aliases
+'PDF' => Barryvdh\DomPDF\Facade::class,
+
+php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
+
+  public function exportPDF() {
+       
+        $data = User::all();
+  
+        $pdf = PDF::loadView('welcome', ['data' => $data]);
+        
+        return $pdf->download('user.pdf');
+       // return $pdf->stream();
+        
+      }

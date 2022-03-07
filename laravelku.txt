@@ -19,3 +19,12 @@ php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
        // return $pdf->stream();
         
       }
+
+
+IMPORT CSV
+
+INSTALL
+composer require maatwebsite/excel
+
+PUBLISH
+php artisan vendor:publish --provider="Maatwebsite\Excel\ExcelServiceProvider" --tag=config
